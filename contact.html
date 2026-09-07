@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Tip - London Police Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="police-badge">🛡️</div>
+            <div class="header-text">
+                <h1>LONDON POLICE SERVICE</h1>
+                <p>Wanted Persons Database</p>
+            </div>
+            <div class="police-badge">🛡️</div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wanted.html">Wanted Persons</a></li>
+                <li><a href="contact.html" class="active">Report a Tip</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>REPORT A TIP</h2>
+            <p class="section-subtitle">Have information? We want to hear from you.</p>
+
+            <div class="contact-container">
+                <div class="contact-form-wrapper">
+                    <h3>Submit Information Online</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name (Optional):</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name or leave blank">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address (Optional):</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional):</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(519) 000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wanted-person">Regarding Wanted Person:</label>
+                            <select id="wanted-person" name="wanted-person" required>
+                                <option value="">-- Select a person --</option>
+                                <option value="john-smith">John David Smith</option>
+                                <option value="maria-gonzalez">Maria Elena Gonzalez</option>
+                                <option value="robert-thompson">Robert Michael Thompson</option>
+                                <option value="other">Other / Unknown</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Location of Sighting:</label>
+                            <input type="text" id="location" name="location" placeholder="Where did you see this person?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date of Sighting:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Time of Sighting:</label>
+                            <input type="time" id="time" name="time">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Details:</label>
+                            <textarea id="details" name="details" rows="6" placeholder="Provide as much detail as possible about what you saw..." required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="anonymous" name="anonymous" checked>
+                            <label for="anonymous">Keep my information anonymous</label>
+                        </div>
+
+                        <button type="submit" class="submit-button">SUBMIT TIP</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Other Ways to Report</h3>
+                    <div class="info-box">
+                        <h4>📞 Phone</h4>
+                        <p><strong>Non-Emergency Line:</strong> (519) 661-5670</p>
+                        <p><strong>Emergency:</strong> 911</p>
+                        <p>Available 24/7</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>📧 Email</h4>
+                        <p><a href="mailto:tips@londonpolice.on.ca">tips@londonpolice.on.ca</a></p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🕵️ Crime Stoppers</h4>
+                        <p><strong>Anonymous Tip Line:</strong> 1-800-222-TIPS (8477)</p>
+                        <p>Rewards available for information leading to arrests</p>
+                    </div>
+
+                    <div class="info-box highlighted">
+                        <h4>⚠️ SAFETY FIRST</h4>
+                        <p>If you see a wanted person and believe there is immediate danger, call 911 immediately.</p>
+                        <p>Do NOT attempt to apprehend suspects yourself.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 London Police Service. All rights reserved.</p>
+        <p>This website is a demonstration of wanted poster functionality.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your tip! Your information has been recorded. Reference: LPS-' + Math.floor(Math.random() * 1000000));
+            this.reset();
+        });
+    </script>
+</body>
+</html>
