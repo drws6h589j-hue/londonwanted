@@ -222,11 +222,33 @@ main {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .wanted-poster:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Latest Poster Badge */
+.latest-poster {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.latest-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+    color: #003d7a;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 10;
 }
 
 .poster-header {
@@ -246,6 +268,22 @@ main {
     padding: 40px 20px;
     font-size: 80px;
     border-bottom: 2px dashed #ccc;
+}
+
+.poster-image-real {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.poster-image-real img {
+    max-width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
 }
 
 .poster-content {
@@ -554,6 +592,11 @@ footer p {
     .about-content {
         grid-template-columns: 1fr;
     }
+
+    .latest-poster {
+        grid-column: auto;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -576,5 +619,10 @@ footer p {
     .poster-image {
         font-size: 60px;
         padding: 30px 10px;
+    }
+
+    .latest-badge {
+        font-size: 1rem;
+        padding: 8px 15px;
     }
 }
